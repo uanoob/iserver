@@ -1,0 +1,42 @@
+{
+  "name": "iserver",
+  "version": "1.0.0",
+  "description": "express server",
+  "main": "app.js",
+  "engines": {
+    "node": "9.5.0",
+    "npm": "5.7.1"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uanoob/iserver.git"
+  },
+  "keywords": [
+    "express",
+    "server",
+    "nodejs"
+  ],
+  "author": "uanoob",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uanoob/iserver/issues"
+  },
+  "homepage": "https://github.com/uanoob/iserver#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^5.0.7",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
+  }
+}
