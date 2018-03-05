@@ -4,12 +4,12 @@ module.exports = (app) => {
   app.get(
     '/auth/github',
     passport.authenticate('github', {
-      scope: ['profile', 'email'],
+      scope: ['user', 'user:email'],
     }),
   );
 
   app.get('/auth/github/callback', passport.authenticate('github'), (req, res) => {
-    res.redirect('/home');
+    res.redirect('/');
   });
 
   app.get('/api/logout', (req, res) => {
