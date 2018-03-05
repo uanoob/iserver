@@ -1,23 +1,23 @@
 const passport = require('passport');
-const FacebookStrategy = require('passport-facebook').Strategy;
+const GitHubStrategy = require('passport-github').Strategy;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
 const User = mongoose.model('users');
 
-passport.use(new FacebookStrategy(
+passport.use(new GitHubStrategy(
   {
-    clientID: keys.facebookClientID,
-    clientSecret: keys.facebookClientSecret,
-    callbackURL: '/auth/facebook/callback',
+    clientID: keys.githubClientID,
+    clientSecret: keys.githubClientSecret,
+    callbackURL: '/auth/github/callback',
     proxy: true,
   },
   async (accessToken, refreshToken, profile, done) => {
-    const existingUser = await User.findOne({ facebookId: profile.id });
+    const existingUser = await User.findOne({ githubId: profile.id });
     if (existingUser) {
       return done(null, existingUser);
     }
-    const user = await new User({ facebookId: profile.id }).save();
+    const user = await new User({ githubId: profile.id }).save();
     done(null, user);
   },
 ));

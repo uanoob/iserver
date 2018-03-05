@@ -9,11 +9,28 @@ class Header extends Component {
         return;
       case false:
         return (
-          <li>
-            <a href="/auth/google">
-              <button className="btn">Login With Google</button>
-            </a>
-          </li>
+          <div>
+            <li>
+              <a className="faicon-google-plus" href="/auth/google">
+                <i className="fa fa-google-plus" />
+              </a>
+            </li>
+            <li>
+              <a className="faicon-github" href="/auth/github">
+                <i className="fa fa-github" />
+              </a>
+            </li>
+            <li>
+              <a className="faicon-facebook" href="/auth/facebook">
+                <i className="fa fa-facebook" />
+              </a>
+            </li>
+            <li>
+              <a className="faicon-linkedin" href="/">
+                <i className="fa fa-linkedin" />
+              </a>
+            </li>
+          </div>
         );
       default:
         return (

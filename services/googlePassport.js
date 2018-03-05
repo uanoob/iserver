@@ -5,16 +5,6 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users');
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser((id, done) => {
-  User.findById(id).then((user) => {
-    done(null, user);
-  });
-});
-
 passport.use(new GoogleStrategy(
   {
     clientID: keys.googleClientID,
@@ -31,3 +21,13 @@ passport.use(new GoogleStrategy(
     done(null, user);
   },
 ));
+
+passport.serializeUser((user, cb) => {
+  cb(null, user.id);
+});
+
+passport.deserializeUser((id, cb) => {
+  User.findById(id).then((user) => {
+    cb(null, user);
+  });
+});
