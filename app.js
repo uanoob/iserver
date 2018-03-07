@@ -6,8 +6,10 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 const path = require('path');
 require('./models/User');
-require('./services/facebookPassport');
-require('./services/googlePassport');
+require('./services/facebookStrategy');
+require('./services/googleStrategy');
+require('./services/twitterStrategy');
+require('./services/githubStrategy');
 
 mongoose.connect(keys.mongoURI);
 
@@ -24,6 +26,10 @@ app.use(passport.session());
 
 require('./routes/authFacebookRoute')(app);
 require('./routes/authGoogleRoute')(app);
+require('./routes/authTwitterRoute')(app);
+require('./routes/authGithubRoute')(app);
+require('./routes/apiLogoutRoute')(app);
+require('./routes/apiCurrentUserRoute')(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets

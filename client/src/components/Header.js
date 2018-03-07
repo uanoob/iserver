@@ -26,6 +26,11 @@ class Header extends Component {
               </a>
             </li>
             <li>
+              <a className="faicon-twitter" href="/auth/twitter">
+                <i className="fa fa-twitter" />
+              </a>
+            </li>
+            <li>
               <a className="faicon-linkedin" href="/">
                 <i className="fa fa-linkedin" />
               </a>
