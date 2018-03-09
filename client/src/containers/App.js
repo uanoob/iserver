@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import * as actions from '../redux/actions';
+import * as actions from '../store/actions';
 
 import Header from '../components/Header';
 import Dashboard from '../components/Dashboard';
